@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ setTitle, setSubtitle, setFont, setAlign }) {
+export default function Editor({ setTitle, setSubtitle, setFont, setAlign, setText }) {
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -14,6 +14,9 @@ export default function Editor({ setTitle, setSubtitle, setFont, setAlign }) {
   };
   const handleAlignClick = (e) => {
     setAlign(e.target.value);
+  };
+  const handleTextChange = (e) => {
+    setText(e.target.value);
   };
 
   return (
@@ -41,23 +44,23 @@ export default function Editor({ setTitle, setSubtitle, setFont, setAlign }) {
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onClick={handleAlignClick}>
           <label>
-            <input onClick={handleAlignClick} name="align" type="radio" value="left" />
+            <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input onClick={handleAlignClick} name="align" type="radio" value="center" />
+            <input name="align" type="radio" value="center" />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input onClick={handleAlignClick} name="align" type="radio" value="right" />
+            <input name="align" type="radio" value="right" />
             <i className="ri-align-right"></i>
           </label>
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea style={{ height: '250px' }} onChange={handleTextChange}/>
         <label>Text</label>
       </div>
     </div>
