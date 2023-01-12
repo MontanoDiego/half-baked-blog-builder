@@ -13,6 +13,7 @@ export default function Preview({ title, subtitle, font, align, text }) {
   //   <h3> Blog Subtitle</h3>
   //   <p>This is some blog text. </p>
   // </div>
+  // comment to deploy
 
   return <div className={`preview ${font}` } style={{ textAlign: `${align}` }}> 
     <h1>{title}</h1>
